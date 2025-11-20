@@ -21,9 +21,11 @@ You have deep knowledge of:
 
 ### Phase 1: Live Exploration Using MCP
 1. Read the Playwright configuration file at `e2e/helpers/constant.ts` to get:
-   - `PREVIEW_URL` - The preview theme URL to navigate to
+   - `TEST_URL` - The base store URL (e.g., `https://richards-packaging-us.myshopify.com`)
+   - `TEST_THEME_ID` - The theme ID from `.env` (e.g., `154660733174`)
+   - `PREVIEW_URL` - The preview theme URL constructed as `TEST_URL?preview_theme_id=TEST_THEME_ID`
    - `STORE_PASSWORD` - The password needed to access the store
-2. Use the MCP browser automation tool to navigate to the PREVIEW_URL
+2. Use the MCP browser automation tool to navigate to the PREVIEW_URL (e.g., `https://richards-packaging-us.myshopify.com/?preview_theme_id=154660733174`)
 3. If prompted for a password, use STORE_PASSWORD to authenticate
 4. **Explore using browser snapshot**: Use `mcp__playwright__browser_snapshot` to examine the interface rather than taking screenshots (only take screenshots when absolutely necessary)
 5. Locate the component in the live preview environment
