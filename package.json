@@ -1,0 +1,20 @@
+{
+  "name": "e2e-richards-packaging-demo",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serenafan-lazer/e2e-richards-packaging-demo.git"
+  },
+  "scripts": {
+    "test:all": "playwright test --config e2e/playwright.config.ts",
+    "test:ui": "playwright test --config e2e/playwright.config.ts --ui",
+    "test:debug": "playwright test --config e2e/playwright.config.ts --debug",
+    "test:report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.1",
+    "dotenv": "^17.2.3"
+  }
+}

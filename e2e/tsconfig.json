@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["@playwright/test", "node"] // Essential for Playwright and Node types
+  },
+  "include": [
+    "**/*.ts", // Include all TypeScript files in the project
+  ],
+  "exclude": [
+    "node_modules",
+    "test-results"
+  ]
+}
