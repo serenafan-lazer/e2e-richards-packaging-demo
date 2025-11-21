@@ -1,4 +1,4 @@
-import type { Page, Locator } from '@playwright/test';
+import { type Page, type Locator, expect } from '@playwright/test';
 import { TEST_URL } from '../helpers/constant';
 
 /**
@@ -68,5 +68,16 @@ export class BasePage {
    */
   async isMobileViewport(): Promise<boolean> {
     return await this.page.evaluate(() => window.innerWidth < 768);
+  }
+
+  /**
+   * Closes the store locator popup if it's currently open
+   * This popup can interfere with clicks on other elements
+   */
+  async closeStoreLocatorPopup(): Promise<void> {
+    const storeLocatorPopuHeading = this.page.getByRole('heading', { name: "Select Your Richards Branch", level: 2 });
+    await expect(storeLocatorPopuHeading).toBeVisible()
+    await this.page.keyboard.press('Escape');
+
   }
 }
