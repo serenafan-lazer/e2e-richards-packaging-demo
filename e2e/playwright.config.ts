@@ -10,7 +10,7 @@ export default defineConfig({
   retries: process.env['CI'] ? 2 : 0,
   reporter: [
     ['html'],
-    ['json', { outputFile: 'test-results.json' }],
+    ['json', { outputFile: path.resolve(__dirname, '..', 'test-results.json') }],
   ],
   use: {
     baseURL: TEST_URL,
