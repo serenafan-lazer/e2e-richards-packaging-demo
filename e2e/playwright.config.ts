@@ -1,6 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 import * as path from 'path';
-import {TEST_URL} from './helpers/constant'
+import { TEST_URL } from './helpers/constant'
 
 export default defineConfig({
   testDir: './tests',

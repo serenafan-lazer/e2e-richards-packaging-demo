@@ -98,13 +98,13 @@ jobs:
         id: parse-results
         if: always()
         run: |
-          if [ -f "test-results.json" ]; then
-            PASSED=$(jq '.stats.expected // 0' test-results.json)
-            FAILED=$(jq '.stats.unexpected // 0' test-results.json)
-            FLAKY=$(jq '.stats.flaky // 0' test-results.json)
-            SKIPPED=$(jq '.stats.skipped // 0' test-results.json)
+          if [ -f "e2e/test-results.json" ]; then
+            PASSED=$(jq '.stats.expected // 0' e2e/test-results.json)
+            FAILED=$(jq '.stats.unexpected // 0' e2e/test-results.json)
+            FLAKY=$(jq '.stats.flaky // 0' e2e/test-results.json)
+            SKIPPED=$(jq '.stats.skipped // 0' e2e/test-results.json)
             TOTAL=$((PASSED + FAILED + FLAKY + SKIPPED))
-            DURATION=$(jq '.stats.duration // 0' test-results.json)
+            DURATION=$(jq '.stats.duration // 0' e2e/test-results.json)
             DURATION_SEC=$((DURATION / 1000))
           else
             PASSED=0
