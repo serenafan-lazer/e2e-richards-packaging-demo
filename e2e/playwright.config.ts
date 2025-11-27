@@ -1,6 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 import * as path from 'path';
-import {TEST_URL} from './helpers/constant'
+import { TEST_URL } from './helpers/constant'
 
 export default defineConfig({
   testDir: './tests',
@@ -10,7 +10,7 @@ export default defineConfig({
   retries: process.env['CI'] ? 2 : 0,
   reporter: [
     ['html'],
-    ['json', { outputFile: path.resolve(__dirname, '..', 'test-results.json') }],
+    ['json', { outputFile: 'test-results.json' }],
   ],
   use: {
     baseURL: TEST_URL,

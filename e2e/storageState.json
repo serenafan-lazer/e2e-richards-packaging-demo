@@ -5,7 +5,7 @@
       "value": "US",
       "domain": "richards-packaging-us.myshopify.com",
       "path": "/",
-      "expires": 1795282646.22779,
+      "expires": 1795791039.272459,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
@@ -15,64 +15,64 @@
       "value": "USD",
       "domain": "richards-packaging-us.myshopify.com",
       "path": "/",
-      "expires": 1764956246.227934,
+      "expires": 1765464639.27259,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "_shopify_y",
-      "value": "3bad5eba-ae7b-48ac-a5d7-65241eb99798",
+      "value": "8ea298bc-b4ef-4348-b21b-244a772f0101",
       "domain": ".richards-packaging-us.myshopify.com",
       "path": "/",
-      "expires": 1795304246.227999,
+      "expires": 1795812639.272663,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "_shopify_s",
-      "value": "ba803bf4-3c6c-4993-ab2d-2f2035ae1e53",
+      "value": "e3f91767-879c-49d1-b67c-286b6c1b18c9",
       "domain": ".richards-packaging-us.myshopify.com",
       "path": "/",
-      "expires": 1763748446,
+      "expires": 1764256839,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "_shopify_analytics",
-      "value": ":AZqnfgSVAAEAxBkUvZ6BXP8Mn4HjfBGdE8mxnD8-iK36gI2friojeIiaPqyb1y7vW1t2uzyCQ5jlirtfkQ:",
+      "value": ":AZrFy3jgAAEAG7jGb0lAxrr3WesTyQgXzuwrh6YYI4Hu7dPbYqq0K38se4rA09ARlgXAS49Vp-wkLmXrfQ:",
       "domain": "richards-packaging-us.myshopify.com",
       "path": "/",
-      "expires": 1795282645.221555,
+      "expires": 1795791037.776617,
       "httpOnly": true,
       "secure": true,
       "sameSite": "Lax"
     },
     {
       "name": "_shop_app_essential",
-      "value": ":AZqnfgcRAAEAH_JkgzC236zpV-BDouSmX4jyqB2yVl1fC-mTqJJV2Tq4P5qRND--ii10Tdxv6lRP:",
+      "value": ":AZrFy3tKAAEAZTHwkFD4JsiP8cUI-eoQuE3Kk84Xfe2EdJQb8lGKhEfKG21yPpVxmgN52ktdKoD_:",
       "domain": ".shop.app",
       "path": "/",
-      "expires": 1795282645.823003,
+      "expires": 1795791038.36942,
       "httpOnly": true,
       "secure": true,
       "sameSite": "None"
     },
     {
       "name": "_shopify_essential",
-      "value": ":AZqnfgHrAAH_vDreK_Zvb-j8LQf6ILq5G-UZiP3kTqZFMpIVeFO-uxQdIFVWc5MojU4bR4LbeZrzEtaPPGaMMpZNIROsFd2JPTW7Bs8Vx0ULwPM5aw6dQiGFYVtZf6P4awJEyOXHONWTjDPYRkSm6Rjq5hSC7Mavjo4H7ksy0HXcMo56QVXwFlR-x_VsWcf6YktUecyZQE0GOJwbvdMlthnUEMV5IrCj83pgjK-dgdeZ5NO6VEWH5WDfYOc0vt9JHwEC_hHGSyFhstbT0CFbHnk0euoxtmaldiHnGjpJv5OSJQDG1-oh5VHeyauGGnF_TRziHiM0d0BvYV5kwbV6ljQ-PTBYciwBy5C3KBTSKVhJ166RO15toD8ZonNv9E-ULGMlE7je8nE40gLNowbldd0Wj6uuL2EaViabI2zIiQ1ugy8SkEEe9a6hscrCTVA8T4SPwaFFKrOCpchwJGqBUTlOWE01tlo3oeQQcGrMeWcP7cYB_Q5FwsrPZtxEhq8owk38oHsBIoPX4VB7QjYgZw:",
+      "value": ":AZrFy3YuAAH_UJU3iQURQJt2BsLUF0mBXjo_0w2dorOBhLOSGSBKBkbouHhCd9vuw4XISA0TNAAgVYF-XuMbzAIrltRA3FZNam61FJQOXf7ayMrb9bg2gGj_ujowhySpYv4Q8T8JBqAj-aq_Kt0px1xxqm07oDmtlGwnucmJOrjPqyRgzOJV3aCjKS_aL-s9mMUz-HbYVzmKSuykP81NeGD-S2ZV8hyX1BNgVHDQQI4M-qcU4tcsUb2_i7snPCw_JykcLIluBJbO7ywMvI3ryc1QU6Wwfbrdwxh3nHaAE36uzN4U3kPPnHVw0rrUHk9cSUN5FxFfbyGJadVapHZl6fRyAg4K85lrDJUSCsKmSicqCv-f1uG6hA2QZo3Q4xN5Y9e-s6u45UE_lTqWBe7pHqXrWrH0QhM6wogG8SAMKLU95ZVAfVXpQQ2JBBGWakX4ceoVz47INI557VJ3FV_ci3O0MsQaOA-rK5C-tdQN:",
       "domain": "richards-packaging-us.myshopify.com",
       "path": "/",
-      "expires": 1795282646.583978,
+      "expires": 1795791039.272822,
       "httpOnly": true,
       "secure": true,
       "sameSite": "Lax"
     },
     {
       "name": "keep_alive",
-      "value": "eyJ2IjoyLCJ0cyI6MTc2Mzc0NjY0NjU4NCwiZW52Ijp7IndkIjoxLCJ1YSI6MSwiY3YiOjEsImJyIjoxfSwiYmh2Ijp7Im1hIjowLCJjYSI6MCwia2EiOjAsInNhIjowLCJrYmEiOjAsInRhIjowLCJ0IjowLCJubSI6MCwibXMiOjAsIm1qIjowLCJtc3AiOjAsInZjIjowLCJjcCI6MCwicmMiOjAsImtqIjowLCJraSI6MCwic3MiOjAsInNqIjowLCJzc20iOjAsInNwIjowLCJ0cyI6MCwidGoiOjAsInRwIjowLCJ0c20iOjB9LCJzZXMiOnsicCI6MiwicyI6MTc2Mzc0NjY0NTQxMCwiZCI6MH19",
+      "value": "eyJ2IjoyLCJ0cyI6MTc2NDI1NTAzOTY1NywiZW52Ijp7IndkIjoxLCJ1YSI6MSwiY3YiOjEsImJyIjoxfSwiYmh2Ijp7Im1hIjowLCJjYSI6MCwia2EiOjAsInNhIjowLCJrYmEiOjAsInRhIjowLCJ0IjowLCJubSI6MCwibXMiOjAsIm1qIjowLCJtc3AiOjAsInZjIjowLCJjcCI6MCwicmMiOjAsImtqIjowLCJraSI6MCwic3MiOjAsInNqIjowLCJzc20iOjAsInNwIjowLCJ0cyI6MCwidGoiOjAsInRwIjowLCJ0c20iOjB9LCJzZXMiOnsicCI6MiwicyI6MTc2NDI1NTAzNzkzMCwiZCI6MX19",
       "domain": "richards-packaging-us.myshopify.com",
       "path": "/",
       "expires": -1,
@@ -87,7 +87,7 @@
       "localStorage": [
         {
           "name": "bugsnag-anonymous-id",
-          "value": "cmi957pk300003l6iiryo5lty"
+          "value": "cmihjwbtv00003l6ivbikmulk"
         }
       ]
     }
