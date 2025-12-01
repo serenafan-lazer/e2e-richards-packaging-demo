@@ -104,8 +104,7 @@ jobs:
             FLAKY=$(jq '.stats.flaky // 0' e2e/test-results.json)
             SKIPPED=$(jq '.stats.skipped // 0' e2e/test-results.json)
             TOTAL=$((PASSED + FAILED + FLAKY + SKIPPED))
-            DURATION=$(jq '.stats.duration // 0' e2e/test-results.json)
-            DURATION_SEC=$((DURATION / 1000))
+            DURATION_SEC=$(jq '(.stats.duration // 0) / 1000 | floor' e2e/test-results.json)
           else
             PASSED=0
             FAILED=0
