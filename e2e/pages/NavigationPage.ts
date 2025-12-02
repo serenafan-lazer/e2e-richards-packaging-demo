@@ -37,6 +37,8 @@ export class NavigationPage extends BasePage {
     if (isMobile) {
       // Mobile: Open hamburger menu first
       await this.mobileMenuButton.click({ timeout: 10000 });
+      // Wait for the menu drawer to be visible before clicking Products
+      await this.mobileProductsItem.waitFor({ state: 'visible', timeout: 10000 });
       // Find the Products menu item
       await this.mobileProductsItem.click({ timeout: 10000 });
       await this.mobileGlassBottlesJarsLink.waitFor({ state: 'visible' });
@@ -44,7 +46,7 @@ export class NavigationPage extends BasePage {
       // Desktop: Click mega menu button
       await this.productsMenuButton.click({ timeout: 10000 });
       // Auto-wait for mega menu to appear by checking for a known link
-      await this.glassBottlesJarsLink.waitFor({ state: 'visible' });
+      await this.glassBottlesJarsLink.waitFor({ state: 'visible', timeout: 10000 });
     }
   }
 
