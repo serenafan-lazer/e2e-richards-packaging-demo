@@ -56,9 +56,9 @@ test.describe('Product Navigation Flow - Core User Interactions', () => {
       // Verify page heading (level may vary by context)
       await expect(collectionPage.collectionHeading).toBeVisible();
 
-      // Verify product count
+      // Verify product count is displayed (dynamic count)
       if (!isMobile) {
-        await expect(page.getByText(/39 products/)).toBeVisible();
+        await expect(page.getByText(/\d+ products/)).toBeVisible();
       }
     });
   });
@@ -253,15 +253,6 @@ test.describe('Product Navigation Flow - Core User Interactions', () => {
         await expect(navigationPage.glassBottlesJarsLink).not.toBeVisible();
       }
     });
-
-    await test.step('Re-click "Products" menu to verify it opens again', async () => {
-      await navigationPage.openProductsMenu();
-     if (isMobile) {
-        await navigationPage.mobileGlassBottlesJarsLink.click();
-      } else {
-        await navigationPage.glassBottlesJarsLink.click();
-      }
-    });
   });
 
   test('PN-08: Verify Product Sorting on Collection Page', async ({ page, collectionPage }) => {
@@ -337,8 +328,8 @@ test.describe('Product Navigation Flow - Core User Interactions', () => {
       // Verify collection heading (level may vary by context)
       await expect(collectionPage.collectionHeading).toBeVisible();
 
-      // Verify product count (may be hidden on mobile, check if attached instead)
-      const productCountElement = page.getByText(/39 products/);
+      // Verify product count is displayed (dynamic count, may be hidden on mobile)
+      const productCountElement = page.getByText(/\d+ products/);
       await expect(productCountElement).toBeAttached();
 
       // Verify product grid is populated

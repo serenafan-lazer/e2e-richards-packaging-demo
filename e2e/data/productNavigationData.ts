@@ -9,7 +9,7 @@
 export const GLASS_BOTTLES_JARS_COLLECTION = {
   url: '/collections/glass-bottles-jars-1',
   name: 'Glass Bottles & Jars',
-  productCount: 39,
+  productCount: 41,
 };
 
 /**
@@ -17,7 +17,7 @@ export const GLASS_BOTTLES_JARS_COLLECTION = {
  * Product: 12 OZ FLT 70G/450 MAYONNAISE RP-1014 (6)
  */
 export const TARGET_PRODUCT = {
-  name: '12 OZ FLT 70G/450 MAYONNAISE RP-1014 (6)',
+  name: '12 oz Clear Glass Round Tall Mayonnaise Jar 70-450',
   sku: '40220148',
   url: '/products/12-oz-flt-70g-450-mayo-rp-1014-6',
   specifications: {
