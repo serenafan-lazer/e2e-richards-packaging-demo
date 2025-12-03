@@ -237,7 +237,6 @@ For each test plan scenario, generate:
 **Focus only on:**
 - ✅ Core positive user flows
 - ✅ Negative test scenarios (invalid inputs, error states)
-- ✅ Data flow and state management
 
 ## Test Plan to Test Code Mapping
 
@@ -307,6 +306,58 @@ test.describe('Product Gallery - Core User Interactions', () => {
 - Test plan steps → `test.step()` blocks with step descriptions
 - Expected results → Assertions within the appropriate `test.step()`
 - Add test plan file reference as a comment at the top (using path `e2e/testplan/...`)
+
+### Handling Desktop vs Mobile Behavior Differences
+
+When the test plan documents different behavior between desktop and mobile viewports, implement conditional steps within the **same test scenario** using `isMobile` from the test info. This ensures the test runs correctly across all browser projects (desktop and mobile).
+
+**Example - Test with Desktop/Mobile Behavior Differences:**
+```typescript
+import { test, expect } from '../../fixtures';
+
+test.describe('Navigation Menu', () => {
+  test('should open navigation menu', async ({ page, isMobile }) => {
+    await page.goto('/');
+
+    await test.step('Open the navigation menu', async () => {
+      if (isMobile) {
+        // Mobile: Click hamburger menu icon
+        await page.getByRole('button', { name: 'Open menu' }).click();
+        await expect(page.getByRole('dialog', { name: 'Menu' })).toBeVisible();
+      } else {
+        // Desktop: Hover over main navigation
+        await page.getByRole('navigation').hover();
+        await expect(page.getByRole('menu')).toBeVisible();
+      }
+    });
+
+    await test.step('Verify menu items are displayed', async () => {
+      // Common assertion for both viewports
+      await expect(page.getByRole('link', { name: 'Products' })).toBeVisible();
+      await expect(page.getByRole('link', { name: 'About' })).toBeVisible();
+    });
+
+    await test.step('Close the navigation menu', async () => {
+      if (isMobile) {
+        // Mobile: Click close button in drawer
+        await page.getByRole('button', { name: 'Close menu' }).click();
+        await expect(page.getByRole('dialog', { name: 'Menu' })).toBeHidden();
+      } else {
+        // Desktop: Move mouse away from navigation
+        await page.mouse.move(0, 0);
+        await expect(page.getByRole('menu')).toBeHidden();
+      }
+    });
+  });
+});
+```
+
+**Key Points for Desktop/Mobile Tests:**
+- Use `isMobile` fixture from Playwright to detect mobile browser projects (Pixel 5, iPhone 12)
+- Keep desktop and mobile logic in the **same test scenario** for maintainability
+- Use `if (isMobile) { ... } else { ... }` blocks within `test.step()` for viewport-specific actions
+- Common assertions that work across both viewports should be outside the conditional blocks
+- Document in the test step description when behavior differs (e.g., "Open menu (hamburger on mobile, hover on desktop)")
 
 ## Output Structure
 

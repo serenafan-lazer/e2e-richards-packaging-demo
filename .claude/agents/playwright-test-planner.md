@@ -34,7 +34,12 @@ You have deep knowledge of:
    - Test form inputs with various data types
    - Trigger state changes and observe behavior
 7. Document observed functional behaviors and potential failure points
-8. Take note of:
+8. **Explore in mobile viewport (Pixel 5)**: Use `mcp__playwright__browser_resize` to resize the browser to Pixel 5 dimensions (width: 393, height: 851) and repeat the exploration:
+   - Test all interactive elements in mobile view
+   - Verify mobile-specific UI elements (hamburger menus, touch interactions)
+   - Document any differences in component behavior between desktop and mobile
+   - Reset to desktop viewport after mobile exploration if needed
+9. Take note of:
    - Error states and validation messages
    - Success states and state transitions
    - Component behavior under different conditions
@@ -157,6 +162,55 @@ For each test, provide:
 - Add to cart button: `button:has-text("Add to cart")`
 - Cart count: `[data-testid="cart-count"]`
 ```
+
+**Documenting Desktop vs Mobile Behavior Differences:**
+
+When a component behaves differently between desktop and mobile viewports, document these differences **within the same test scenario** rather than creating separate tests. Use conditional steps that clearly indicate desktop vs mobile behavior.
+
+**Example Test Format with Desktop/Mobile Differences:**
+```markdown
+#### 2.2 Open Navigation Menu
+**Browser Coverage:** All browsers
+**Priority:** High
+
+**Steps:**
+1. Navigate to the homepage at `/`
+2. Open the navigation menu:
+   - **Desktop**: Hover over the main navigation bar
+   - **Mobile**: Click the hamburger menu icon (☰)
+3. Verify the menu is visible
+4. Close the navigation menu:
+   - **Desktop**: Move mouse away from navigation area
+   - **Mobile**: Click the close button (✕) in the menu drawer
+
+**Expected Results:**
+- Menu opens and displays navigation links
+- All main navigation items are visible (Products, About, Contact)
+- Menu closes when appropriate action is taken
+- **Desktop-specific**: Dropdown menu appears on hover
+- **Mobile-specific**: Full-screen drawer slides in from the side
+
+**Assertions:**
+- `await expect(page.getByRole('link', { name: 'Products' })).toBeVisible()`
+- `await expect(page.getByRole('link', { name: 'About' })).toBeVisible()`
+- Desktop: `await expect(page.getByRole('menu')).toBeVisible()`
+- Mobile: `await expect(page.getByRole('dialog', { name: 'Menu' })).toBeVisible()`
+
+**Selectors:**
+- Desktop navigation: `role=navigation`
+- Mobile hamburger: `button[aria-label="Open menu"]` or `role=button[name="Open menu"]`
+- Mobile close button: `button[aria-label="Close menu"]` or `role=button[name="Close menu"]`
+- Mobile drawer: `role=dialog[name="Menu"]`
+
+**Implementation Note:** Use Playwright's `isMobile` fixture to conditionally execute desktop vs mobile steps within the same test.
+```
+
+**Key Guidelines for Desktop/Mobile Differences:**
+- Document both behaviors in **one test scenario** (not separate tests)
+- Use bullet points with **Desktop:** and **Mobile:** prefixes for conditional steps
+- Include viewport-specific selectors in the Selectors section
+- Add an **Implementation Note** mentioning the use of `isMobile` fixture
+- Focus on functional differences (e.g., click vs hover, drawer vs dropdown)
 
 **3. Implementation Guidance**
 

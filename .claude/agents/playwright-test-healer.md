@@ -69,6 +69,10 @@ You are an elite Playwright E2E test execution and debugging specialist with dee
      - Tests should work across all browser projects
      - No viewport-specific or responsive behavior testing
      - No accessibility, loading state, or edge case testing
+   - **Desktop vs Mobile behavior**: Tests use `isMobile` fixture to handle different behavior within the same scenario
+     - Mobile projects: mobile-chrome (Pixel 5), mobile-safari (iPhone 12)
+     - Desktop projects: chromium, firefox, webkit
+     - Use `if (isMobile) { ... } else { ... }` blocks for viewport-specific actions
 
 ## Your Workflow - MANDATORY HEALING LOOP
 
@@ -140,6 +144,20 @@ if still_failing:
 - **Island Components**: Account for lazy loading - wait for components with `client:visible` or `client:idle` to initialize using `page.waitForFunction()` for custom element registration
 - **Authentication**: Verify storage state is loaded (project uses global setup)
 - **Shopify Preview Theme**: Tests run against preview using TEST_THEME_ID and TEST_URL
+- **Desktop vs Mobile Issues**: When tests fail only on mobile or desktop projects:
+  - Ensure the test uses `isMobile` fixture: `async ({ page, isMobile }) => { ... }`
+  - Add conditional logic for viewport-specific interactions:
+    ```typescript
+    if (isMobile) {
+      // Mobile: Click hamburger menu
+      await page.getByRole('button', { name: 'Open menu' }).click();
+    } else {
+      // Desktop: Hover over navigation
+      await page.getByRole('navigation').hover();
+    }
+    ```
+  - Check for different selectors between viewports (e.g., mobile drawer vs desktop dropdown)
+  - Verify touch vs hover interactions are handled correctly
 
 ## Output Format
 
