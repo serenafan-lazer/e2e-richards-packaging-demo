@@ -154,7 +154,6 @@ CRITICAL REQUIREMENTS:
 - Create test scenarios covering:
   * Happy paths (successful user flows)
   * Negative scenarios (validation failures, error states)
-  * Data flow and state management
 
 **DO NOT create test scenarios for:**
   * ❌ Responsive behavior or viewport-specific testing
@@ -251,6 +250,12 @@ CRITICAL REQUIREMENTS:
 - Happy path tests (successful flows)
 - Negative tests (validation failures, error handling)
 - Functional interaction tests (user workflows, state changes)
+
+**Desktop vs Mobile Behavior:**
+- When components behave differently between desktop and mobile, implement conditional steps within the **same test scenario**
+- Use Playwright's \`isMobile\` fixture to detect mobile browser projects (Pixel 5, iPhone 12)
+- Use \`if (isMobile) { ... } else { ... }\` blocks within \`test.step()\` for viewport-specific actions
+- Keep common assertions outside conditional blocks
 
 **DO NOT generate tests for:**
 - ❌ Responsive/viewport-specific behavior
