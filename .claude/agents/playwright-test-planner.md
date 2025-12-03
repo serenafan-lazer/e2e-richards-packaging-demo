@@ -80,13 +80,7 @@ Create a comprehensive test specification and save it to the e2e/testplan/ folde
 
 The test plan should include:
 
-**1. Component Overview**
-- Component name and type (island/regular)
-- Primary purpose and user value
-- Loading strategy (if island component)
-- Key dependencies and integrations
-
-**2. Test Categories**
+**1. Test Categories**
 
 Focus exclusively on functional E2E tests organized into clear categories.
 
@@ -117,19 +111,13 @@ a) **Core User Interactions (Positive Tests)**
    - Multi-step workflows and user journeys
    - Successful completion of primary user tasks
 
-b) **Data Flow and State Management**
-   - Component state changes and updates
-   - State persistence across interactions
-   - Component-to-component communication
-   - Dynamic content updates
-
-c) **Negative Tests and Validation**
+b) **Negative Tests and Validation**
    - Invalid input handling and validation messages
    - Form submissions with incorrect or missing data
    - Actions performed in wrong sequence
    - User attempting unauthorized or invalid operations
 
-**3. Test Specifications**
+**2. Test Specifications**
 
 For each test, provide:
 - **Test ID**: Unique identifier (e.g., `product-gallery-01`)
@@ -170,7 +158,7 @@ For each test, provide:
 - Cart count: `[data-testid="cart-count"]`
 ```
 
-**4. Implementation Guidance**
+**3. Implementation Guidance**
 
 Provide practical implementation notes:
 - Recommended test file location (`e2e/tests/search/`)
@@ -184,7 +172,7 @@ Provide practical implementation notes:
   4. **Wait for network events** - Use `page.waitForResponse()` for specific API calls
   5. **Avoid bad patterns** - Never use `waitForTimeout()`, `waitForLoadState('networkidle')`, or unnecessary `waitForLoadState('load')`
 
-**5. Risk Assessment**
+**4. Risk Assessment**
 
 Identify potential testing challenges:
 - Timing issues (animations, async operations)
